@@ -1,0 +1,62 @@
+{
+  "Model Details": {
+    "Model ID": "FRD-LGB-v1.0",
+    "Algorithm": "LightGBM Gradient Boosting",
+    "Features": "479 (transaction, identity, temporal, behavioral)",
+    "Training Data Size": "472,432 transactions",
+    "Validation Data Size": "118,108 transactions",
+    "Development Period": "January 2026",
+    "Version": "1.0.0"
+  },
+  "Performance Metrics": {
+    "Primary Metric": "PR-AUC = 0.4268 (12x better than random)",
+    "ROC-AUC": "0.8789",
+    "Precision @ threshold": "33.6% (95th percentile)",
+    "Recall @ threshold": "48.9% (95th percentile)",
+    "Overfitting Gap": "15.0% (within acceptable range)",
+    "Statistical Confidence": "95% CI: [0.4089, 0.4421]"
+  },
+  "Training Data": {
+    "Source": "IEEE-CIS Fraud Detection Dataset",
+    "Time Period": "Historical transactions (2024)",
+    "Fraud Rate": "3.51%",
+    "Class Imbalance": "1:28 ratio",
+    "Geographic Coverage": "Global",
+    "Preprocessing": "Frequency encoding, label encoding, standard scaling"
+  },
+  "Validation Approach": {
+    "Method": "Time-based train/valid split (80/20)",
+    "Temporal Ordering": "Preserved (no future data leakage)",
+    "Cross-Validation": "Time-series aware",
+    "Bootstrap Analysis": "1000 iterations for confidence intervals",
+    "Stability Testing": "4 time windows (Q1-Q4)"
+  },
+  "Limitations": {
+    "Known Issues": [
+      "Precision 33.6% means 2/3 of flags are false positives",
+      "Misses ~51% of fraud at 95th percentile threshold",
+      "Temporal performance variability (CV 12.6%)",
+      "Requires 479 features (high complexity)",
+      "Sensitive to feature distribution shift"
+    ],
+    "Assumptions": [
+      "Past fraud patterns predict future fraud",
+      "Feature relationships remain stable",
+      "Data quality maintained (<5% missing)",
+      "Fraud patterns evolve slowly (<monthly)"
+    ]
+  },
+  "Ethical Considerations": {
+    "Potential Harms": [
+      "False positives frustrate legitimate customers",
+      "Potential disparate impact on customer segments",
+      "Over-reliance reduces human judgment"
+    ],
+    "Mitigations": [
+      "Human review required for all flagged transactions",
+      "Customer override and appeal process",
+      "Quarterly fairness audits",
+      "Transparent communication about automated scoring"
+    ]
+  }
+}
