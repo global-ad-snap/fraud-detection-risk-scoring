@@ -353,7 +353,7 @@ pip install -r requirements.txt
 
 ---
 
-## Clinical Impact
+## Business Impact
 
 ### Potential Value Drivers
 
