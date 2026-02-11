@@ -280,24 +280,6 @@ Optimal fraud systems maximize **business value**, not precision alone.
 | GDPR / CCPA | ⚠ Partial (explainability implemented) |
 | FCRA | N/A (not a credit model) |
 
----
-
-## Disclaimer & Intended Use
-
-### Disclaimer
-This project is for **demonstration and portfolio purposes only**.  
-It is **not a production system** and must not be used without independent validation, security review, and governance approval.
-
-### Intended Use
-✔ Fraud risk scoring  
-✔ Analyst decision support  
-✔ Case prioritization  
-
-### Prohibited Use
-✗ Automated transaction blocking  
-✗ Automated account closure  
-✗ Credit scoring or lending decisions  
-✗ Medical diagnosis or clinical decision-making  
 
 ---
 
@@ -387,7 +369,61 @@ Typical ROI evaluation would include:
 Formal ROI validation requires real-world deployment data.
 
 ---
+## Validation & Reliability Considerations
 
+### Dataset Limitations
+
+Results are dependent on dataset scope, quality, and representativeness. Potential limitations include sample bias, missing data, and historical data constraints. External validation on independent datasets would be required before operational deployment.
+
+### Model Validation Approach
+
+Validation methods may include:
+
+- Train/test separation or cross-validation
+- Performance metrics relevant to the use case
+- Sensitivity to class imbalance where applicable
+- Error pattern analysis
+
+These steps help estimate generalization performance but do not replace real-world validation.
+
+### Clinical / Operational Validation Requirements
+
+For healthcare or high-stakes applications, additional validation typically includes:
+
+- Prospective evaluation in operational settings
+- Clinical or domain expert review
+- Workflow compatibility testing
+- Safety and performance monitoring after deployment
+
+Formal regulatory approval may be required depending on jurisdiction and intended use.
+
+### Performance Interpretation
+
+Model outputs should be interpreted cautiously:
+
+- Predictions support, not replace, expert decision-making
+- Performance metrics reflect dataset conditions
+- Continuous monitoring is recommended post-deployment
+
+---
+## Disclaimer & Intended Use
+
+### Disclaimer
+This project is for **demonstration and portfolio purposes only**.  
+It is **not a production system** and must not be used without independent validation, security review, and governance approval.
+
+### Intended Use
+✔ Fraud risk scoring  
+✔ Analyst decision support  
+✔ Case prioritization  
+
+### Prohibited Use
+✗ Automated transaction blocking  
+✗ Automated account closure  
+✗ Credit scoring or lending decisions  
+✗ Medical diagnosis or clinical decision-making  
+
+---
 ## Author
 Medical AI & Healthcare Data Science Consultant
 
